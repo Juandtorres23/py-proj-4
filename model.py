@@ -45,12 +45,13 @@ class Project(db.Model):
     completed = db.Column(db.Boolean, default = False)
     team_id = db.Column(db.Integer, db.ForeignKey("teams.id"), nullable = False)
 
-    def __init__(self, project_name, description, completed, team_id):
+    def __init__(self, project_name, completed, team_id, **kwargs):
         self.project_name = project_name
         self.completed = completed
         self.team_id = team_id
 
-        #description 
+        if "description" in kwargs:
+            self.description = kwargs["description"] 
 
 def connect_to_db(app):
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ["POSTGRES_URI"]

@@ -14,4 +14,4 @@ class ProjectForm(FlaskForm):
     submit = SubmitField('submit')
 
     def update_teams(self, teams):
-        self.team_selection.choices = [ (team,id, team.team_name) for team in teams ]
+        self.team_selection.choices = [ (team.id, team.team_name) for team in teams ]

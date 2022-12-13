@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 {% block main %}
 
-<h1> Welcome! </h1>
+<h1> Project Tracking App </h1>
 <div class="form-container">
     <h3> Add Team </h3>
     <form action="{{ url_for('add_team') }}" method="POST">
         {{ team_form.csrf_token() }}
-        {{ team_form.team_name.label }} {{ team_form.team_name }}
-        {{ team_form.submit }}
+        <ul>
+            {{ team_form.team_name.label }} 
+            {{ team_form.team_name }}
+        </ul> 
+        <ul>
+            {{ team_form.submit }} 
+        </ul> 
     </form>
 </div>
 
@@ -15,16 +20,25 @@
     <h3> Add Project </h3>
     <form action="{{ url_for('add_project') }}" method="POST">
         {{ project_form.csrf_token() }}
+       <ul>
         {{ project_form.project_name.label }}
         {{ project_form.project_name }} 
+       </ul> 
+       <ul>
         {{ project_form.description.label }}
         {{ project_form.description }}
+       </ul>
+       <ul>
         {{ project_form.completed.label }}
         {{ project_form.completed }}
+       </ul>
+       <ul>
         {{ project_form.team_selection.label }}
         {{ project_form.team_selection }}
-        {{ project_form.submit.label }}
+       </ul>
+       <ul>
         {{ project_form.submit }}
+       </ul>
     </form>
 </div>
 

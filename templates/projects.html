@@ -1,14 +1,25 @@
 {% extends "base.html" %}
 {% block main %}
 
-<div>
+<div class="projects">
     {% for project in projects %}
-    <li> {{ project.project_name }} </li>
-    <li> {{ project.description }} </li>
-    <li> {{ project.completed }} </li>
-    <li> {{ project.team.team_name }} </li>
-
+    <div class="project-div">
+        <p class="p-tag"> Team Name: </p>
+        <p> {{ project.project_name }} </p>
+        <br>
+        <p class="p-tag"> Description: </p>
+        <p> {{ project.description }} </p>
+        <br>
+        <p class="p-tag"> Completed: </p>
+        <p> {{ project.completed }} </p>
+        <br>
+        <p class="p-tag"> Project Name: </p>
+        <p> {{ project.team.team_name }} </p>
+        <br>
+    
+    </div>
     {% endfor %}
+
 </div>
 
 {% endblock %}

@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% block main %}
 
+<div>
+    {% for team in teams %} 
+    <li> {{ team.team_name }} </li>
+    {% endfor %}
 
+</div>
 
 {% endblock %}

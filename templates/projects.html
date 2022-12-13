@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block main %}
 
+<div>
+    {% for project in projects %}
+    <li> {{ project.project_name }} </li>
+    <li> {{ project.description }} </li>
+    <li> {{ project.completed }} </li>
+    <li> {{ project.team.team_name }} </li>
 
+    {% endfor %}
+</div>
 
 {% endblock %}
